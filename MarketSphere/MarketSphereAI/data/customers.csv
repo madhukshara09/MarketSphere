@@ -1,0 +1,301 @@
+Customer_ID,Customer_Name,Age,Gender,Income,Education,Occupation,Marital_Status,Purchase_Frequency,Recency,Spending,Customer_Segment,Predicted_CLV,Response_Probability,Recommendation
+MS-100000,Jonathan Hunt,33,Female,59200,High School,Self-Employed,Married,17,6,71.3,Champions,13232.58,0.717,Enrol in premium loyalty tier
+MS-100001,Ashley Walker,46,Female,36300,Bachelor,Employed,Single,14,27,68.9,Loyal,9473.58,0.726,Cross-sell complementary bundle
+MS-100002,Kristie Logan,18,Female,94500,High School,Employed,Married,15,44,29.5,Loyal,8687.45,0.561,Cross-sell complementary bundle
+MS-100003,Monica Tate,61,Female,119300,Master,Employed,Single,15,145,58.3,Loyal,10219.91,0.587,Cross-sell complementary bundle
+MS-100004,Laurie Allen,51,Male,59700,Master,Employed,Married,11,98,60.9,Loyal,6753.82,0.543,Cross-sell complementary bundle
+MS-100005,Ashley Montoya,39,Male,123300,High School,Manager,Divorced,17,53,34.1,Loyal,11431.27,0.594,Cross-sell complementary bundle
+MS-100006,Robert Jennings,39,Male,55100,Bachelor,Student,Single,11,68,47.9,Loyal,6173.26,0.567,Cross-sell complementary bundle
+MS-100007,Christine King,47,Male,26100,Master,Employed,Widowed,12,156,41.1,Potential,4586.91,0.569,Send targeted upgrade offer
+MS-100008,Tanya Trujillo,40,Female,43200,PhD,Retired,Married,24,20,80.8,Champions,18628.96,0.643,Enrol in premium loyalty tier
+MS-100009,Ms. Angela Peterson DDS,40,Female,36000,Master,Manager,Married,9,91,33.4,Potential,3722.59,0.491,Send targeted upgrade offer
+MS-100010,Jim Walter,52,Male,51300,Bachelor,Employed,Single,10,7,59.4,Loyal,6804.89,0.602,Cross-sell complementary bundle
+MS-100011,Laura Johnson,50,Female,76900,Bachelor,Manager,Married,17,24,54.0,Loyal,11892.89,0.63,Cross-sell complementary bundle
+MS-100012,Heidi Henderson,42,Female,38200,High School,Employed,Married,19,1,66.3,Champions,13174.52,0.608,Enrol in premium loyalty tier
+MS-100013,Kevin Jimenez,42,Female,55900,High School,Manager,Married,12,24,53.9,Loyal,7700.78,0.566,Cross-sell complementary bundle
+MS-100014,Jonathan Christensen,45,Female,63400,Master,Employed,Married,15,22,36.1,Loyal,8328.52,0.549,Cross-sell complementary bundle
+MS-100015,Katherine Rangel,35,Female,41700,Bachelor,Employed,Married,15,17,60.2,Loyal,9728.28,0.583,Cross-sell complementary bundle
+MS-100016,Jason Howe,38,Male,38500,Bachelor,Employed,Married,11,5,96.2,Champions,9658.45,0.623,Enrol in premium loyalty tier
+MS-100017,Joseph Johnson,50,Female,60300,Bachelor,Employed,Single,9,21,64.9,Loyal,6518.58,0.643,Cross-sell complementary bundle
+MS-100018,Carl Williams,41,Female,85900,Master,Retired,Married,9,6,77.1,Loyal,8006.74,0.594,Cross-sell complementary bundle
+MS-100019,Stacie Garcia,25,Male,44200,PhD,Self-Employed,Single,17,146,21.0,Potential,5618.78,0.456,Send targeted upgrade offer
+MS-100020,Julie Olson,37,Male,41400,Bachelor,Manager,Married,12,15,93.2,Champions,10248.91,0.551,Enrol in premium loyalty tier
+MS-100021,Stephen Sims,52,Male,54400,PhD,Employed,Single,10,77,80.5,Loyal,7333.81,0.591,Cross-sell complementary bundle
+MS-100022,John Noble,40,Male,66100,High School,Employed,Divorced,18,131,52.7,Loyal,9914.36,0.634,Cross-sell complementary bundle
+MS-100023,Ms. Kristin Santiago,41,Female,45400,Master,Retired,Divorced,21,1,70.0,Champions,15479.91,0.708,Enrol in premium loyalty tier
+MS-100024,Robert Shaw,51,Female,49900,Master,Employed,Married,14,93,91.7,Loyal,10685.95,0.622,Cross-sell complementary bundle
+MS-100025,Stephen Hamilton,67,Male,52300,Bachelor,Student,Married,18,77,53.7,Loyal,10406.51,0.583,Cross-sell complementary bundle
+MS-100026,Derrick Johnson,34,Female,35600,High School,Employed,Divorced,13,250,31.8,At Risk,3783.51,0.408,Trigger win-back discount
+MS-100027,Linda Ellis,61,Male,53500,High School,Self-Employed,Married,10,227,72.4,Potential,5093.49,0.519,Send targeted upgrade offer
+MS-100028,Katherine Dorsey,27,Female,45100,High School,Employed,Single,11,29,49.9,Loyal,6415.74,0.578,Cross-sell complementary bundle
+MS-100029,John Dixon,45,Female,118300,Bachelor,Self-Employed,Married,8,50,65.9,Loyal,6791.2,0.686,Cross-sell complementary bundle
+MS-100030,Rhonda Grant,28,Female,46000,Bachelor,Employed,Single,10,88,48.2,Potential,5215.86,0.566,Send targeted upgrade offer
+MS-100031,Sandra Stewart,61,Male,71200,Bachelor,Manager,Divorced,14,24,22.5,Loyal,6884.06,0.566,Cross-sell complementary bundle
+MS-100032,Annette Norris,54,Male,68800,Master,Employed,Married,13,59,44.9,Loyal,7640.31,0.584,Cross-sell complementary bundle
+MS-100033,Kaylee Chavez,58,Female,35100,Master,Manager,Divorced,11,47,66.2,Loyal,6998.89,0.624,Cross-sell complementary bundle
+MS-100034,Tracy Kirby,31,Male,33100,Master,Self-Employed,Married,9,365,31.4,Hibernating,1846.01,0.318,Move to low-cost email nurture
+MS-100035,Austin Adams,52,Female,47500,Master,Self-Employed,Married,15,21,89.6,Champions,12611.29,0.609,Enrol in premium loyalty tier
+MS-100036,Mr. Paul Jenkins MD,36,Female,78100,High School,Employed,Married,14,8,12.0,Loyal,6407.07,0.521,Cross-sell complementary bundle
+MS-100037,Aaron Carpenter,37,Male,44800,Master,Manager,Married,12,29,36.1,Loyal,5986.12,0.556,Cross-sell complementary bundle
+MS-100038,Angela Leon,50,Male,43200,High School,Employed,Single,21,66,60.6,Champions,12709.79,0.655,Enrol in premium loyalty tier
+MS-100039,Marc Walton,54,Male,18000,PhD,Student,Single,3,21,58.9,Potential,1714.92,0.539,Send targeted upgrade offer
+MS-100040,Mary Reid,46,Male,48500,High School,Student,Divorced,12,53,71.8,Loyal,8370.31,0.7,Cross-sell complementary bundle
+MS-100041,Erik Aguilar,35,Male,66800,Master,Self-Employed,Married,9,95,58.4,Potential,5588.04,0.574,Send targeted upgrade offer
+MS-100042,Tiffany Vasquez,32,Male,70800,Master,Self-Employed,Married,14,188,89.3,Loyal,9335.18,0.552,Cross-sell complementary bundle
+MS-100043,Brandy Walker,62,Male,70400,Master,Manager,Divorced,11,198,44.9,Potential,5004.52,0.565,Send targeted upgrade offer
+MS-100044,Tina Liu,51,Female,50000,Master,Retired,Single,18,13,67.7,Champions,12999.33,0.594,Enrol in premium loyalty tier
+MS-100045,Angela Barnett,52,Female,52400,Master,Employed,Single,15,81,40.9,Loyal,7549.1,0.593,Cross-sell complementary bundle
+MS-100046,Rachel Herman,71,Male,84300,High School,Student,Married,13,2,79.5,Champions,11774.46,0.604,Enrol in premium loyalty tier
+MS-100047,Jason Morton,32,Female,54600,High School,Employed,Married,19,103,50.8,Loyal,10304.46,0.585,Cross-sell complementary bundle
+MS-100048,Christina Smith,76,Male,20600,Bachelor,Self-Employed,Single,11,39,48.6,Loyal,5511.56,0.548,Cross-sell complementary bundle
+MS-100049,Stephen Williams,82,Other,91800,Master,Employed,Married,6,55,54.9,Potential,4256.06,0.544,Send targeted upgrade offer
+MS-100050,Hayden Hammond,64,Female,35700,High School,Manager,Single,12,80,35.8,Potential,5210.81,0.558,Send targeted upgrade offer
+MS-100051,Jordan Murphy,54,Male,107700,Master,Employed,Married,16,2,47.1,Loyal,12272.82,0.635,Cross-sell complementary bundle
+MS-100052,Gabriel Martinez,34,Female,124300,Bachelor,Manager,Married,9,219,21.3,At Risk,3926.11,0.436,Trigger win-back discount
+MS-100053,Laura Ballard,56,Male,81700,PhD,Self-Employed,Single,15,81,48.6,Loyal,9281.68,0.616,Cross-sell complementary bundle
+MS-100054,Joseph Hamilton,37,Female,87100,Master,Employed,Single,10,11,53.5,Loyal,7391.37,0.622,Cross-sell complementary bundle
+MS-100055,Kyle Gregory,43,Male,133800,Bachelor,Retired,Married,10,169,68.7,Potential,7291.1,0.578,Send targeted upgrade offer
+MS-100056,James Gonzalez,39,Male,35300,PhD,Student,Divorced,12,42,46.1,Loyal,6272.79,0.567,Cross-sell complementary bundle
+MS-100057,Amber Gardner,47,Female,65000,Bachelor,Employed,Single,16,31,27.7,Loyal,8015.89,0.595,Cross-sell complementary bundle
+MS-100058,Jodi Fischer,60,Female,64600,Bachelor,Employed,Married,11,162,54.1,Potential,5742.13,0.573,Send targeted upgrade offer
+MS-100059,Michael Rich,36,Female,37500,Bachelor,Employed,Single,14,12,42.3,Loyal,7428.1,0.547,Cross-sell complementary bundle
+MS-100060,Joseph Floyd,30,Male,143400,High School,Employed,Single,7,170,35.6,At Risk,4144.58,0.476,Trigger win-back discount
+MS-100061,Tina Martin,30,Male,44700,Master,Student,Divorced,20,95,91.6,Champions,14949.13,0.643,Enrol in premium loyalty tier
+MS-100062,Jean Coleman,30,Male,41700,Master,Student,Married,23,5,50.0,Champions,13719.91,0.617,Enrol in premium loyalty tier
+MS-100063,Blake Torres,24,Female,65400,Master,Manager,Single,21,71,100.0,Champions,18458.08,0.808,Enrol in premium loyalty tier - prioritise
+MS-100064,Dennis Jimenez,31,Female,92200,Bachelor,Self-Employed,Single,17,37,47.4,Loyal,11673.22,0.631,Cross-sell complementary bundle
+MS-100065,Jennifer Mcdonald,60,Male,44300,Bachelor,Employed,Single,10,180,32.6,At Risk,3623.12,0.483,Trigger win-back discount
+MS-100066,John Wilson,35,Male,44300,Bachelor,Self-Employed,Married,12,105,49.8,Potential,6126.78,0.572,Send targeted upgrade offer
+MS-100067,Rebecca Cabrera,46,Male,72800,Bachelor,Retired,Single,15,57,37.6,Loyal,8366.26,0.592,Cross-sell complementary bundle
+MS-100068,Crystal Mckay,27,Male,30500,Bachelor,Manager,Divorced,11,12,70.9,Loyal,7579.59,0.666,Cross-sell complementary bundle
+MS-100069,Maria Russell,45,Female,41000,Bachelor,Student,Single,17,52,44.3,Loyal,8816.55,0.546,Cross-sell complementary bundle
+MS-100070,Sarah Santiago,20,Male,39800,High School,Manager,Single,14,28,55.7,Loyal,8470.11,0.594,Cross-sell complementary bundle
+MS-100071,Heather Moore,34,Female,47700,High School,Manager,Single,10,22,72.1,Loyal,7328.0,0.566,Cross-sell complementary bundle
+MS-100072,Laura Ryan,72,Other,54400,Bachelor,Manager,Married,6,349,53.1,Hibernating,1856.49,0.401,Move to low-cost email nurture
+MS-100073,Mike Peters,35,Male,133000,High School,Employed,Married,17,80,59.4,Loyal,13727.49,0.537,Cross-sell complementary bundle
+MS-100074,Cindy Phillips,58,Female,87200,Bachelor,Retired,Married,6,25,42.9,Potential,3953.08,0.545,Send targeted upgrade offer
+MS-100075,Justin Garcia,49,Other,58600,Master,Self-Employed,Single,19,62,75.1,Champions,13908.26,0.739,Enrol in premium loyalty tier
+MS-100076,Troy Jackson,41,Female,52400,Bachelor,Self-Employed,Single,7,99,90.8,Loyal,5294.58,0.562,Cross-sell complementary bundle
+MS-100077,Olivia Bowen,35,Female,86000,Bachelor,Manager,Married,6,19,51.1,Potential,4273.41,0.641,Send targeted upgrade offer
+MS-100078,Mark Hunter,60,Male,70300,PhD,Student,Divorced,16,28,34.9,Loyal,8982.75,0.571,Cross-sell complementary bundle
+MS-100079,Ryan Carter,41,Female,86600,Bachelor,Employed,Married,10,15,58.1,Loyal,7616.82,0.58,Cross-sell complementary bundle
+MS-100080,Dean Brown,63,Male,108000,Bachelor,Employed,Divorced,14,158,92.2,Loyal,11244.64,0.621,Cross-sell complementary bundle
+MS-100081,Steven Frank,34,Male,36800,Master,Retired,Married,15,10,51.5,Loyal,8815.11,0.67,Cross-sell complementary bundle
+MS-100082,Alan Davis,44,Female,21000,Master,Employed,Widowed,9,152,86.5,Potential,5360.21,0.522,Send targeted upgrade offer
+MS-100083,Bryce Jennings,49,Female,57400,PhD,Manager,Married,9,32,37.4,Potential,4843.99,0.561,Send targeted upgrade offer
+MS-100084,Taylor Bell,48,Female,60100,Bachelor,Student,Married,16,79,52.1,Loyal,9386.46,0.596,Cross-sell complementary bundle
+MS-100085,Lisa Pena,27,Female,66000,High School,Employed,Married,9,25,77.6,Loyal,7314.15,0.644,Cross-sell complementary bundle
+MS-100086,Tammy Stewart,34,Male,44300,Master,Employed,Married,9,88,61.6,Potential,5319.0,0.627,Send targeted upgrade offer
+MS-100087,Joel Werner,40,Female,52200,Bachelor,Employed,Single,9,8,46.4,Loyal,5405.33,0.547,Cross-sell complementary bundle
+MS-100088,Melissa Callahan,32,Female,74600,PhD,Employed,Divorced,13,50,92.6,Champions,11583.15,0.6,Enrol in premium loyalty tier
+MS-100089,Tammy Price,52,Female,76400,High School,Self-Employed,Married,10,28,55.1,Loyal,7005.02,0.569,Cross-sell complementary bundle
+MS-100090,Heather Moss,51,Female,105600,Bachelor,Retired,Single,12,69,58.4,Loyal,8972.88,0.553,Cross-sell complementary bundle
+MS-100091,Alexander Dominguez,18,Female,21900,Bachelor,Employed,Single,16,249,50.5,Potential,5462.4,0.463,Send targeted upgrade offer
+MS-100092,Tyler Marsh,20,Male,27600,Bachelor,Manager,Widowed,15,122,38.0,Potential,5932.14,0.469,Send targeted upgrade offer
+MS-100093,Randall Flores,26,Male,112000,Master,Self-Employed,Married,21,13,59.8,Champions,17745.71,0.802,Enrol in premium loyalty tier - prioritise
+MS-100094,Kimberly Peterson,45,Male,76300,Master,Self-Employed,Married,14,38,82.8,Champions,11963.75,0.654,Enrol in premium loyalty tier
+MS-100095,Mikayla Rodriguez,69,Male,82900,Bachelor,Self-Employed,Divorced,13,9,53.2,Loyal,9461.68,0.659,Cross-sell complementary bundle
+MS-100096,Bailey Martinez,38,Female,51000,Bachelor,Employed,Single,10,26,82.0,Loyal,7974.27,0.594,Cross-sell complementary bundle
+MS-100097,Matthew Rios,46,Male,46900,Bachelor,Employed,Single,16,2,37.6,Loyal,8569.37,0.574,Cross-sell complementary bundle
+MS-100098,Kenneth Kelly,29,Female,63500,Master,Manager,Single,12,4,60.2,Loyal,8675.44,0.644,Cross-sell complementary bundle
+MS-100099,David Fisher,29,Male,38000,Master,Employed,Single,11,16,69.6,Loyal,7672.09,0.588,Cross-sell complementary bundle
+MS-100100,Calvin Daniels,18,Female,29100,High School,Employed,Married,16,88,66.6,Loyal,9299.11,0.533,Cross-sell complementary bundle
+MS-100101,Taylor Sutton,43,Male,35200,Bachelor,Retired,Divorced,10,64,51.9,Loyal,5370.54,0.57,Cross-sell complementary bundle
+MS-100102,David Hernandez,55,Female,61100,Bachelor,Employed,Divorced,7,106,15.1,At Risk,2554.89,0.376,Trigger win-back discount
+MS-100103,Donald Mendoza,38,Female,77300,High School,Self-Employed,Single,13,365,52.6,At Risk,4173.42,0.393,Trigger win-back discount
+MS-100104,Ernest Raymond,61,Male,121900,Master,Employed,Married,10,148,74.6,Potential,7631.81,0.64,Send targeted upgrade offer
+MS-100105,Sara Tran,46,Female,68600,Bachelor,Retired,Married,14,15,69.1,Loyal,10920.52,0.623,Cross-sell complementary bundle
+MS-100106,Tonya Palmer,43,Female,71700,Bachelor,Employed,Single,13,43,53.4,Loyal,8597.92,0.609,Cross-sell complementary bundle
+MS-100107,Mark Webster,50,Male,124000,High School,Manager,Divorced,13,143,84.4,Loyal,10711.05,0.571,Cross-sell complementary bundle
+MS-100108,Matthew Smith,49,Female,40900,Master,Self-Employed,Divorced,16,1,33.1,Loyal,7855.76,0.619,Cross-sell complementary bundle
+MS-100109,Julie Cordova,58,Male,37700,Bachelor,Retired,Married,9,29,64.5,Loyal,5865.11,0.592,Cross-sell complementary bundle
+MS-100110,Shannon Ho,33,Female,45500,Bachelor,Employed,Married,9,45,90.7,Loyal,7293.58,0.653,Cross-sell complementary bundle
+MS-100111,Jennifer Cherry,18,Female,55500,Bachelor,Employed,Single,11,6,89.0,Champions,9670.59,0.685,Enrol in premium loyalty tier
+MS-100112,Crystal Calderon,44,Other,144200,Master,Manager,Divorced,22,16,97.3,Champions,25560.21,0.845,Enrol in premium loyalty tier - prioritise
+MS-100113,Curtis Howard,35,Male,49600,Master,Employed,Married,13,33,29.7,Loyal,6110.73,0.477,Cross-sell complementary bundle
+MS-100114,Kimberly Wells,43,Male,104400,Bachelor,Employed,Married,15,7,47.2,Loyal,11289.21,0.623,Cross-sell complementary bundle
+MS-100115,Lauren Lopez,65,Female,46900,High School,Employed,Single,11,131,59.0,Potential,5931.89,0.464,Send targeted upgrade offer
+MS-100116,Brittany English,29,Male,72400,High School,Employed,Married,9,194,72.8,Potential,5289.33,0.478,Send targeted upgrade offer
+MS-100117,Robin Conley,53,Male,78800,High School,Student,Married,15,154,30.6,Potential,6705.57,0.471,Send targeted upgrade offer
+MS-100118,Rebecca Fowler,55,Female,73700,Bachelor,Self-Employed,Married,11,105,61.9,Loyal,7094.6,0.535,Cross-sell complementary bundle
+MS-100119,Jake Simon,49,Female,81300,Bachelor,Student,Single,15,73,38.2,Loyal,8515.74,0.605,Cross-sell complementary bundle
+MS-100120,Patrick Lutz,58,Female,42500,Bachelor,Manager,Married,8,186,53.5,Potential,3593.84,0.451,Send targeted upgrade offer
+MS-100121,Daniel Allison,37,Female,111700,High School,Self-Employed,Divorced,12,28,21.8,Potential,7128.92,0.481,Send targeted upgrade offer
+MS-100122,Laura Sosa,34,Female,90200,Master,Self-Employed,Married,20,3,68.9,Champions,17082.15,0.663,Enrol in premium loyalty tier
+MS-100123,Victor Black,57,Female,42300,High School,Employed,Married,6,18,15.2,Potential,2231.1,0.469,Send targeted upgrade offer
+MS-100124,Brooke Hicks,52,Female,72800,Bachelor,Employed,Divorced,7,127,63.9,Potential,4393.03,0.44,Send targeted upgrade offer
+MS-100125,Nicholas Cook,61,Male,35800,High School,Employed,Married,11,22,29.2,Potential,4812.58,0.596,Send targeted upgrade offer
+MS-100126,Andrew Watkins,46,Female,60500,Bachelor,Retired,Single,15,85,38.7,Loyal,7614.2,0.541,Cross-sell complementary bundle
+MS-100127,Carla Carter,64,Male,34200,High School,Student,Single,9,102,68.1,Potential,5284.81,0.622,Send targeted upgrade offer
+MS-100128,Heather Kaufman,39,Other,80100,High School,Manager,Divorced,12,111,62.0,Loyal,7842.92,0.517,Cross-sell complementary bundle
+MS-100129,Paul Smith,29,Female,220200,Master,Employed,Single,14,32,29.1,Loyal,12968.85,0.64,Cross-sell complementary bundle
+MS-100130,Karen Henderson,18,Male,112400,Bachelor,Employed,Divorced,12,97,4.8,Potential,5268.29,0.483,Send targeted upgrade offer
+MS-100131,Stephanie Werner,29,Male,80600,Master,Manager,Married,11,16,59.4,Loyal,8271.76,0.64,Cross-sell complementary bundle
+MS-100132,Carolyn Black MD,54,Male,38600,Bachelor,Employed,Single,11,160,59.7,Potential,5448.02,0.574,Send targeted upgrade offer
+MS-100133,Carla Eaton,24,Male,68800,High School,Manager,Divorced,20,3,23.5,Loyal,10150.09,0.53,Cross-sell complementary bundle
+MS-100134,Sonya Schneider,37,Female,98800,Bachelor,Employed,Single,14,10,93.0,Champions,14270.88,0.764,Enrol in premium loyalty tier - prioritise
+MS-100135,James Richardson,70,Male,55700,Bachelor,Manager,Single,12,208,73.7,Potential,6499.22,0.543,Send targeted upgrade offer
+MS-100136,Christian Bishop,54,Other,61500,PhD,Employed,Married,13,48,23.9,Potential,5927.31,0.559,Send targeted upgrade offer
+MS-100137,William Washington,66,Male,27100,Bachelor,Self-Employed,Married,15,42,74.0,Loyal,9998.09,0.551,Cross-sell complementary bundle
+MS-100138,Molly James,30,Male,39500,High School,Retired,Single,14,146,26.7,Potential,4876.05,0.466,Send targeted upgrade offer
+MS-100139,Maria Bailey,18,Female,25200,Bachelor,Employed,Single,11,59,88.2,Loyal,7977.63,0.633,Cross-sell complementary bundle
+MS-100140,Barbara Stone,63,Male,137300,Master,Employed,Married,13,63,90.8,Loyal,13287.67,0.655,Cross-sell complementary bundle
+MS-100141,Melinda Bryant,25,Female,71700,Bachelor,Self-Employed,Divorced,7,34,92.6,Loyal,6346.21,0.628,Cross-sell complementary bundle
+MS-100142,Angela Maxwell,44,Female,80400,High School,Student,Widowed,15,74,28.6,Loyal,7657.25,0.49,Cross-sell complementary bundle
+MS-100143,Johnny Collins,46,Male,52900,High School,Employed,Divorced,11,205,47.9,Potential,4697.46,0.423,Send targeted upgrade offer
+MS-100144,Courtney Nguyen,31,Female,30100,High School,Retired,Married,9,55,28.2,Potential,3548.62,0.439,Send targeted upgrade offer
+MS-100145,Evelyn Meadows,63,Female,62800,Bachelor,Student,Single,10,52,34.7,Potential,5193.92,0.493,Send targeted upgrade offer
+MS-100146,Shannon Powell,63,Female,43600,PhD,Employed,Married,15,48,98.6,Champions,12718.13,0.665,Enrol in premium loyalty tier
+MS-100147,Robert Robinson,50,Female,37500,Bachelor,Employed,Married,18,14,58.2,Champions,11295.84,0.651,Enrol in premium loyalty tier
+MS-100148,Hannah Cobb,43,Female,59500,Bachelor,Self-Employed,Divorced,13,244,50.2,Potential,5348.08,0.46,Send targeted upgrade offer
+MS-100149,Robert James,45,Female,60900,Bachelor,Self-Employed,Married,15,79,51.3,Loyal,8762.76,0.618,Cross-sell complementary bundle
+MS-100150,Patrick Douglas,29,Female,53500,Bachelor,Employed,Married,7,206,37.6,At Risk,2676.66,0.446,Trigger win-back discount
+MS-100151,Derek Houston,40,Female,40900,Bachelor,Manager,Divorced,13,43,43.6,Loyal,6784.53,0.583,Cross-sell complementary bundle
+MS-100152,Ryan Wallace,42,Female,37200,Master,Manager,Married,14,32,66.3,Loyal,9213.21,0.684,Cross-sell complementary bundle
+MS-100153,Mark Young,32,Male,58200,Bachelor,Retired,Married,10,37,48.8,Loyal,6042.53,0.549,Cross-sell complementary bundle
+MS-100154,Kristina Martinez,54,Male,100500,PhD,Retired,Married,8,7,47.1,Loyal,5928.58,0.546,Cross-sell complementary bundle
+MS-100155,Jimmy Morales,24,Male,28200,High School,Retired,Single,10,41,51.3,Loyal,5356.44,0.604,Cross-sell complementary bundle
+MS-100156,Mitchell Craig,37,Female,43200,Bachelor,Employed,Married,14,66,57.3,Loyal,8209.75,0.608,Cross-sell complementary bundle
+MS-100157,Michael Livingston,18,Female,53900,Bachelor,Employed,Married,10,176,51.6,Potential,4735.26,0.446,Send targeted upgrade offer
+MS-100158,Sarah Cisneros,49,Female,54000,Bachelor,Employed,Married,18,36,44.7,Loyal,10249.75,0.578,Cross-sell complementary bundle
+MS-100159,Kimberly Clark,53,Female,44400,High School,Retired,Married,12,32,46.1,Loyal,6668.2,0.607,Cross-sell complementary bundle
+MS-100160,Gary Livingston,51,Female,138100,Bachelor,Manager,Married,13,45,64.8,Loyal,11720.17,0.632,Cross-sell complementary bundle
+MS-100161,Alexandra Hansen,81,Female,69400,PhD,Employed,Married,15,9,47.9,Loyal,9855.51,0.706,Cross-sell complementary bundle
+MS-100162,Geoffrey Newman,55,Female,37200,Master,Employed,Married,15,82,50.7,Loyal,7786.95,0.537,Cross-sell complementary bundle
+MS-100163,Richard Alvarez,31,Female,24900,Bachelor,Employed,Married,12,130,40.9,Potential,4778.61,0.547,Send targeted upgrade offer
+MS-100164,Gina Johnson,78,Female,53700,Master,Employed,Married,15,16,53.2,Loyal,9591.06,0.566,Cross-sell complementary bundle
+MS-100165,Bryan Christian,31,Female,112900,PhD,Self-Employed,Divorced,8,138,66.3,Potential,5730.88,0.578,Send targeted upgrade offer
+MS-100166,Albert Clark,53,Female,63300,High School,Retired,Divorced,12,1,16.8,Loyal,5413.55,0.581,Cross-sell complementary bundle
+MS-100167,Donald Mccoy,53,Male,20500,High School,Manager,Single,13,83,59.2,Loyal,6812.24,0.505,Cross-sell complementary bundle
+MS-100168,Michael Ryan,32,Male,31200,High School,Employed,Single,8,92,68.6,Potential,4745.18,0.66,Send targeted upgrade offer
+MS-100169,Brendan Rivera,61,Male,61300,Bachelor,Student,Married,5,3,55.7,Loyal,3447.39,0.501,Cross-sell complementary bundle
+MS-100170,John Obrien,48,Female,93800,Bachelor,Manager,Widowed,17,132,42.0,Loyal,9489.43,0.524,Cross-sell complementary bundle
+MS-100171,Eric Bradley,50,Female,61800,PhD,Self-Employed,Married,8,11,75.3,Loyal,6436.72,0.693,Cross-sell complementary bundle
+MS-100172,Melanie Hansen,34,Female,62000,PhD,Employed,Married,17,40,75.7,Champions,13116.34,0.616,Enrol in premium loyalty tier
+MS-100173,Devin Barnes,60,Female,94000,Bachelor,Manager,Divorced,12,5,36.1,Loyal,7871.14,0.606,Cross-sell complementary bundle
+MS-100174,Nicholas Hinton,32,Male,102100,Bachelor,Self-Employed,Single,20,71,64.8,Champions,15451.25,0.648,Enrol in premium loyalty tier
+MS-100175,Susan Barrett MD,20,Female,42800,Bachelor,Employed,Divorced,16,151,59.9,Loyal,8229.26,0.52,Cross-sell complementary bundle
+MS-100176,Lawrence Scott,62,Other,70600,Master,Retired,Married,15,22,11.9,Loyal,6400.53,0.438,Cross-sell complementary bundle
+MS-100177,Sara Johnson,37,Female,37700,Bachelor,Manager,Single,15,207,62.1,Potential,6861.13,0.519,Send targeted upgrade offer
+MS-100178,Alex Lamb III,44,Female,35700,PhD,Employed,Married,14,94,25.5,Potential,5149.02,0.494,Send targeted upgrade offer
+MS-100179,Christina Hill,68,Male,75600,Master,Employed,Single,14,110,55.6,Loyal,8545.15,0.438,Cross-sell complementary bundle
+MS-100180,Jennifer Robinson,58,Female,30600,Bachelor,Employed,Divorced,14,13,23.8,Loyal,5540.08,0.514,Cross-sell complementary bundle
+MS-100181,Jason Brown,51,Male,62600,Master,Manager,Single,7,135,66.0,Potential,4240.53,0.536,Send targeted upgrade offer
+MS-100182,Mary Fleming,57,Male,66800,Bachelor,Self-Employed,Married,5,88,100.0,Loyal,4285.1,0.644,Cross-sell complementary bundle
+MS-100183,Elizabeth Olson,34,Other,85500,High School,Employed,Married,13,365,41.7,At Risk,3906.9,0.332,Trigger win-back discount
+MS-100184,Jordan Boyd,53,Male,34600,Bachelor,Self-Employed,Divorced,10,24,35.0,Potential,4682.78,0.427,Send targeted upgrade offer
+MS-100185,Evan Morgan,57,Other,68800,Bachelor,Manager,Divorced,10,35,21.0,Potential,4677.86,0.528,Send targeted upgrade offer
+MS-100186,William Boyer,53,Female,54800,Bachelor,Employed,Single,12,37,33.2,Loyal,6022.49,0.511,Cross-sell complementary bundle
+MS-100187,David Meza,40,Female,113200,Master,Manager,Divorced,17,157,76.9,Loyal,12616.0,0.67,Cross-sell complementary bundle
+MS-100188,Kelly Reyes,18,Female,41500,Master,Manager,Single,15,26,55.9,Loyal,9191.39,0.692,Cross-sell complementary bundle
+MS-100189,Leon Lewis,50,Male,35200,High School,Self-Employed,Married,14,102,18.6,Potential,4542.03,0.498,Send targeted upgrade offer
+MS-100190,Daniel Romero,44,Other,72600,Bachelor,Employed,Married,13,83,49.8,Loyal,7810.21,0.501,Cross-sell complementary bundle
+MS-100191,Kayla Conner,38,Female,39500,Bachelor,Employed,Married,11,114,46.8,Potential,5228.62,0.593,Send targeted upgrade offer
+MS-100192,Shane Burns,53,Female,32400,Bachelor,Employed,Single,9,27,67.7,Loyal,5929.31,0.671,Cross-sell complementary bundle
+MS-100193,Sara Nguyen,46,Male,87400,Bachelor,Retired,Married,13,138,44.5,Potential,7150.89,0.646,Send targeted upgrade offer
+MS-100194,Jenna Gilbert DDS,46,Male,70400,PhD,Self-Employed,Widowed,15,264,63.3,Potential,6898.68,0.497,Send targeted upgrade offer
+MS-100195,Juan Petty,24,Male,18000,Bachelor,Self-Employed,Single,12,23,52.7,Loyal,6383.22,0.518,Cross-sell complementary bundle
+MS-100196,Bonnie Cabrera,24,Female,38300,Master,Manager,Single,12,337,19.2,Hibernating,2327.39,0.308,Move to low-cost email nurture
+MS-100197,Amy Estrada,48,Male,35200,Master,Self-Employed,Single,16,68,32.9,Loyal,6807.5,0.553,Cross-sell complementary bundle
+MS-100198,Richard Everett,44,Female,77500,Master,Employed,Single,12,14,82.5,Champions,10667.86,0.687,Enrol in premium loyalty tier
+MS-100199,Derek Fernandez,45,Female,112500,High School,Student,Single,19,34,62.5,Champions,15868.3,0.668,Enrol in premium loyalty tier
+MS-100200,Jim Lopez,45,Male,146400,High School,Employed,Married,14,83,58.9,Loyal,11671.65,0.623,Cross-sell complementary bundle
+MS-100201,Cody Moore,48,Female,79700,High School,Retired,Married,17,13,54.5,Champions,12283.37,0.612,Enrol in premium loyalty tier
+MS-100202,Katherine Payne,43,Female,35400,PhD,Retired,Single,9,38,20.4,Potential,3356.3,0.441,Send targeted upgrade offer
+MS-100203,Daniel Diaz,45,Female,34900,Bachelor,Manager,Married,11,29,49.2,Loyal,6065.68,0.559,Cross-sell complementary bundle
+MS-100204,Julie Burgess,46,Female,37800,PhD,Retired,Single,12,8,64.0,Loyal,8046.2,0.682,Cross-sell complementary bundle
+MS-100205,Frederick Espinoza,55,Male,72300,PhD,Self-Employed,Married,14,6,70.5,Champions,11341.14,0.703,Enrol in premium loyalty tier
+MS-100206,Adam Davis,36,Male,102500,High School,Retired,Married,12,126,77.1,Loyal,9172.7,0.549,Cross-sell complementary bundle
+MS-100207,Michele Li,53,Male,24500,High School,Self-Employed,Married,15,167,63.2,Potential,7126.71,0.596,Send targeted upgrade offer
+MS-100208,Peter Martin,51,Male,76300,High School,Self-Employed,Married,9,23,67.6,Loyal,7039.89,0.596,Cross-sell complementary bundle
+MS-100209,Robert Henderson,44,Male,88100,Master,Retired,Single,11,94,43.4,Potential,6513.71,0.618,Send targeted upgrade offer
+MS-100210,Roy Jackson,37,Female,66900,Master,Manager,Single,10,4,85.2,Loyal,8899.52,0.662,Cross-sell complementary bundle
+MS-100211,Walter Lewis,48,Male,248800,Master,Employed,Married,10,122,34.9,Potential,8894.89,0.649,Send targeted upgrade offer
+MS-100212,William Henderson,54,Female,73800,High School,Self-Employed,Married,12,54,62.5,Loyal,8495.77,0.597,Cross-sell complementary bundle
+MS-100213,Scott Bush,29,Male,58900,Master,Student,Married,8,126,50.0,Potential,4205.48,0.539,Send targeted upgrade offer
+MS-100214,Lori Alexander,44,Female,76300,Master,Retired,Married,14,166,82.1,Loyal,9455.28,0.619,Cross-sell complementary bundle
+MS-100215,Lisa Davis,44,Female,45400,Bachelor,Employed,Married,15,30,52.6,Loyal,8991.97,0.644,Cross-sell complementary bundle
+MS-100216,Nancy Wilson,34,Female,35400,High School,Retired,Married,20,85,71.1,Champions,12492.15,0.665,Enrol in premium loyalty tier
+MS-100217,Miguel Dean,35,Female,70100,High School,Self-Employed,Married,13,94,40.7,Potential,6939.69,0.464,Send targeted upgrade offer
+MS-100218,Christopher Davidson,23,Female,97500,PhD,Employed,Divorced,14,107,80.8,Loyal,11191.35,0.684,Cross-sell complementary bundle
+MS-100219,Travis Bird,29,Male,52200,PhD,Employed,Married,10,36,76.0,Loyal,7521.16,0.653,Cross-sell complementary bundle
+MS-100220,Wesley Wong,23,Female,88000,Bachelor,Employed,Married,12,89,88.7,Loyal,10145.5,0.58,Cross-sell complementary bundle
+MS-100221,Rachel Mitchell,35,Male,49000,Bachelor,Student,Single,9,24,49.8,Loyal,5381.02,0.601,Cross-sell complementary bundle
+MS-100222,Adam Meyer,36,Female,120900,High School,Retired,Married,7,111,75.1,Potential,5730.31,0.6,Send targeted upgrade offer
+MS-100223,Sara Freeman,36,Female,63900,Bachelor,Self-Employed,Single,18,170,71.0,Loyal,10649.77,0.559,Cross-sell complementary bundle
+MS-100224,Ricky Castro,48,Female,73800,Bachelor,Manager,Single,13,74,80.4,Loyal,10209.08,0.688,Cross-sell complementary bundle
+MS-100225,Joy Franklin,41,Female,81900,Bachelor,Self-Employed,Divorced,9,50,71.7,Loyal,7089.35,0.762,Cross-sell complementary bundle - prioritise
+MS-100226,Tara Santiago,34,Female,31600,PhD,Employed,Married,18,159,60.2,Loyal,8705.51,0.488,Cross-sell complementary bundle
+MS-100227,David Fleming,34,Female,53400,Bachelor,Employed,Single,11,40,80.9,Loyal,8576.13,0.599,Cross-sell complementary bundle
+MS-100228,Gregory Mckenzie,28,Male,132800,Bachelor,Self-Employed,Married,14,110,1.0,Potential,6396.72,0.553,Send targeted upgrade offer
+MS-100229,Kerri Garcia,40,Male,59000,Master,Manager,Married,13,281,49.6,At Risk,4833.47,0.439,Trigger win-back discount
+MS-100230,Andrew Lawrence,40,Female,109000,Bachelor,Employed,Single,22,41,38.4,Champions,14813.43,0.592,Enrol in premium loyalty tier
+MS-100231,Thomas Elliott,64,Female,86300,Bachelor,Student,Divorced,10,97,80.7,Loyal,7862.73,0.55,Cross-sell complementary bundle
+MS-100232,Matthew Andrews,63,Female,25500,Master,Self-Employed,Single,7,304,52.6,At Risk,2158.68,0.397,Trigger win-back discount
+MS-100233,John Johnson,62,Male,79700,PhD,Employed,Married,14,54,72.2,Loyal,10916.29,0.606,Cross-sell complementary bundle
+MS-100234,Brandy Garcia,70,Male,35500,Bachelor,Employed,Widowed,6,319,59.7,At Risk,1999.48,0.368,Trigger win-back discount
+MS-100235,Joseph Scott,27,Female,65200,PhD,Manager,Married,14,67,79.6,Loyal,10755.98,0.631,Cross-sell complementary bundle
+MS-100236,Nicole Jones,52,Female,48100,Bachelor,Employed,Married,19,202,74.0,Loyal,10168.66,0.386,Cross-sell complementary bundle
+MS-100237,Barbara Maynard,53,Male,58600,Master,Self-Employed,Married,12,59,56.8,Loyal,7561.23,0.618,Cross-sell complementary bundle
+MS-100238,Michelle Parker,49,Female,56200,Bachelor,Manager,Single,7,134,67.4,Potential,4197.1,0.528,Send targeted upgrade offer
+MS-100239,Frank Mosley,71,Female,64700,High School,Employed,Widowed,14,13,56.9,Loyal,9742.11,0.636,Cross-sell complementary bundle
+MS-100240,Jennifer Palmer,76,Other,47400,High School,Student,Single,9,61,47.4,Potential,4906.8,0.535,Send targeted upgrade offer
+MS-100241,Jennifer Burns,56,Male,31600,Bachelor,Employed,Widowed,7,79,67.4,Potential,4207.18,0.562,Send targeted upgrade offer
+MS-100242,Jessica Mack,51,Male,36800,Bachelor,Employed,Married,14,16,89.6,Champions,11449.19,0.646,Enrol in premium loyalty tier
+MS-100243,Leslie Webb,28,Female,87600,High School,Retired,Married,15,2,75.0,Champions,13299.12,0.624,Enrol in premium loyalty tier
+MS-100244,Tony Cruz,28,Male,126000,Master,Employed,Married,20,47,40.2,Loyal,14441.3,0.578,Cross-sell complementary bundle
+MS-100245,John Taylor,52,Male,64400,PhD,Retired,Single,14,175,74.7,Loyal,8454.36,0.62,Cross-sell complementary bundle
+MS-100246,Joseph Adams,42,Female,84700,PhD,Employed,Married,10,54,39.9,Potential,6048.12,0.597,Send targeted upgrade offer
+MS-100247,Nicolas Johnson,26,Other,90000,Master,Employed,Single,13,29,1.0,Potential,5309.92,0.58,Send targeted upgrade offer
+MS-100248,Kelly Ashley,41,Female,31400,Master,Manager,Married,18,8,36.5,Loyal,8649.1,0.641,Cross-sell complementary bundle
+MS-100249,Jacob Robinson,48,Male,25000,Master,Retired,Married,13,40,59.9,Loyal,7529.51,0.454,Cross-sell complementary bundle
+MS-100250,Christopher Sullivan,55,Male,56700,PhD,Employed,Married,13,152,25.9,Potential,4911.0,0.55,Send targeted upgrade offer
+MS-100251,Brian Fritz,42,Female,24800,High School,Employed,Married,20,281,60.4,Potential,7110.99,0.449,Send targeted upgrade offer
+MS-100252,Aaron Gonzalez,40,Female,51300,Bachelor,Employed,Married,8,129,81.0,Potential,5307.69,0.554,Send targeted upgrade offer
+MS-100253,Robert Warren,43,Female,29800,Bachelor,Employed,Single,6,245,54.7,At Risk,2253.04,0.375,Trigger win-back discount
+MS-100254,Angela Jackson,45,Female,43800,High School,Retired,Married,11,134,65.6,Potential,6187.98,0.478,Send targeted upgrade offer
+MS-100255,Colleen Wilkinson,28,Male,41400,Master,Employed,Married,17,112,50.4,Loyal,8508.01,0.581,Cross-sell complementary bundle
+MS-100256,Kristina Lam,54,Male,73300,Master,Manager,Married,13,241,6.6,At Risk,3428.9,0.261,Trigger win-back discount
+MS-100257,Amanda Choi,71,Female,43300,Bachelor,Employed,Married,7,12,61.4,Loyal,4658.52,0.543,Cross-sell complementary bundle
+MS-100258,Melissa Randall,54,Female,34600,High School,Employed,Divorced,11,49,40.4,Loyal,5296.99,0.494,Cross-sell complementary bundle
+MS-100259,Taylor Krueger,24,Female,59300,Bachelor,Employed,Divorced,15,211,62.3,Potential,7436.94,0.537,Send targeted upgrade offer
+MS-100260,Tracy Santos,44,Female,220500,PhD,Employed,Single,11,132,15.0,Potential,7788.53,0.56,Send targeted upgrade offer
+MS-100261,Amber Davis,20,Female,72400,Bachelor,Student,Married,15,13,59.9,Loyal,11037.75,0.718,Cross-sell complementary bundle
+MS-100262,Diana Smith,19,Male,24200,Bachelor,Employed,Divorced,18,30,67.5,Champions,11382.12,0.659,Enrol in premium loyalty tier
+MS-100263,Amanda Middleton,52,Male,60400,Bachelor,Employed,Married,13,77,85.5,Loyal,10092.63,0.667,Cross-sell complementary bundle
+MS-100264,Michael Payne,44,Female,184500,Bachelor,Self-Employed,Married,15,99,61.0,Loyal,13702.26,0.589,Cross-sell complementary bundle
+MS-100265,Kellie Fernandez,34,Male,62600,High School,Employed,Divorced,6,108,28.6,At Risk,2632.53,0.441,Trigger win-back discount
+MS-100266,Anthony Bell MD,18,Male,103200,PhD,Employed,Single,11,139,57.0,Potential,7114.95,0.501,Send targeted upgrade offer
+MS-100267,David Smith,27,Male,95600,High School,Employed,Widowed,22,141,15.4,Potential,9243.49,0.568,Send targeted upgrade offer
+MS-100268,Brandon Leonard,45,Female,99000,Master,Employed,Single,14,11,16.5,Loyal,7583.95,0.551,Cross-sell complementary bundle
+MS-100269,David Hansen,43,Female,93100,Bachelor,Self-Employed,Single,12,80,61.6,Loyal,8646.83,0.632,Cross-sell complementary bundle
+MS-100270,Gabrielle Ramirez,52,Female,65900,Master,Retired,Divorced,13,27,68.3,Loyal,9793.4,0.636,Cross-sell complementary bundle
+MS-100271,Caroline Davis,63,Female,53400,High School,Self-Employed,Single,10,72,61.1,Loyal,6276.41,0.552,Cross-sell complementary bundle
+MS-100272,Paul Anderson,39,Male,51200,PhD,Manager,Single,12,76,81.7,Loyal,8800.29,0.716,Cross-sell complementary bundle
+MS-100273,Shari Maxwell,49,Male,61200,Bachelor,Self-Employed,Single,16,31,73.5,Champions,12276.93,0.674,Enrol in premium loyalty tier
+MS-100274,Kara Steele,41,Female,70300,Master,Employed,Married,17,52,68.6,Loyal,12525.64,0.675,Cross-sell complementary bundle
+MS-100275,Erica Simpson,37,Other,32700,High School,Manager,Married,7,27,21.9,Potential,2669.16,0.437,Send targeted upgrade offer
+MS-100276,Aaron Gray,40,Female,51100,High School,Student,Married,12,21,41.7,Loyal,6681.28,0.51,Cross-sell complementary bundle
+MS-100277,Kathleen Barnes,55,Female,57000,PhD,Employed,Married,9,5,60.0,Loyal,6321.12,0.617,Cross-sell complementary bundle
+MS-100278,Kayla Kelly,30,Male,60900,Bachelor,Self-Employed,Single,10,26,26.0,Potential,4834.88,0.528,Send targeted upgrade offer
+MS-100279,Leslie Santos,58,Female,50500,Master,Employed,Single,6,134,30.7,At Risk,2408.5,0.349,Trigger win-back discount
+MS-100280,James Sanchez,62,Female,83400,PhD,Manager,Single,6,22,24.2,Potential,3222.21,0.561,Send targeted upgrade offer
+MS-100281,Michael Frazier,43,Female,55300,High School,Student,Married,17,166,42.1,Potential,7500.76,0.401,Send targeted upgrade offer
+MS-100282,Elizabeth Schmidt,46,Female,49000,Bachelor,Employed,Married,11,79,59.9,Loyal,6627.72,0.611,Cross-sell complementary bundle
+MS-100283,Grace Doyle,25,Male,33200,Bachelor,Employed,Single,15,81,81.3,Loyal,10202.84,0.648,Cross-sell complementary bundle
+MS-100284,Leslie Sanchez,74,Other,40900,Master,Manager,Married,17,61,57.1,Loyal,9932.96,0.581,Cross-sell complementary bundle
+MS-100285,Tom Lawson,56,Female,64300,Bachelor,Employed,Married,17,4,48.8,Loyal,11107.97,0.702,Cross-sell complementary bundle
+MS-100286,Mary Wilson,45,Other,61200,Master,Employed,Single,10,104,34.3,Potential,4690.23,0.484,Send targeted upgrade offer
+MS-100287,Louis Collins,44,Male,23200,PhD,Retired,Married,14,7,83.9,Champions,10576.09,0.572,Enrol in premium loyalty tier
+MS-100288,David Wallace,49,Female,87900,Master,Self-Employed,Divorced,17,83,61.6,Loyal,11967.71,0.615,Cross-sell complementary bundle
+MS-100289,Chris Schultz,35,Male,42300,Bachelor,Employed,Widowed,14,39,71.5,Loyal,9734.55,0.636,Cross-sell complementary bundle
+MS-100290,Kevin Davis,47,Male,38700,Bachelor,Employed,Widowed,11,24,34.4,Loyal,5233.69,0.535,Cross-sell complementary bundle
+MS-100291,Jill Jones,31,Female,95800,High School,Self-Employed,Married,17,44,29.9,Loyal,9944.33,0.516,Cross-sell complementary bundle
+MS-100292,Donald Hammond,49,Female,97900,Bachelor,Manager,Married,12,6,61.5,Loyal,9903.95,0.607,Cross-sell complementary bundle
+MS-100293,Sandra King,34,Female,42100,Master,Self-Employed,Single,11,7,58.6,Loyal,7147.0,0.626,Cross-sell complementary bundle
+MS-100294,Jennifer Phillips,55,Male,49400,Bachelor,Employed,Married,10,193,81.9,Potential,5837.29,0.44,Send targeted upgrade offer
+MS-100295,Christopher Salazar,41,Male,33400,Master,Employed,Married,5,7,42.3,Potential,2615.99,0.44,Send targeted upgrade offer
+MS-100296,Daniel Lyons,46,Male,83700,Master,Retired,Married,16,23,51.1,Loyal,11224.19,0.593,Cross-sell complementary bundle
+MS-100297,Olivia Powell,81,Male,87100,High School,Self-Employed,Single,12,35,45.2,Loyal,7944.04,0.607,Cross-sell complementary bundle
+MS-100298,Mary Martin,53,Male,47600,Master,Student,Divorced,14,231,78.1,Potential,7241.79,0.424,Send targeted upgrade offer
+MS-100299,James Guzman,46,Male,108500,High School,Employed,Married,7,84,39.2,Potential,4408.27,0.524,Send targeted upgrade offer

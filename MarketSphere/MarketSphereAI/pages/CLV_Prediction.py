@@ -1,0 +1,121 @@
+"""Customer lifetime value prediction workspace."""
+
+from __future__ import annotations
+
+import numpy as np
+import streamlit as st
+
+from utils import charts
+from utils.components import callout, page_header, progress_card, section_header, stat_card
+from utils.helpers import format_currency, predict_clv
+
+PLOT_CONFIG = {"displayModeBar": False, "responsive": True}
+
+
+def render() -> None:
+    """Render the CLV prediction page."""
+    page_header(
+        "Customer Lifetime Value Prediction",
+        "Estimate long-run account value and churn exposure for a single customer.",
+        chip="Valuation engine ready",
+    )
+
+    form_col, result_col = st.columns([1, 1.45])
+
+    with form_col:
+        section_header("Account Inputs", "Behavioural and demographic signals")
+        with st.form("clv_form"):
+            age = st.slider("Age", 18, 85, 41)
+            income = st.number_input("Annual income (USD)", 12_000, 400_000, 86_000, step=1_000)
+            frequency = st.slider("Purchase frequency (orders per year)", 1, 40, 14)
+            recency = st.slider("Recency (days since last purchase)", 1, 365, 38)
+            spending = st.slider("Spending score", 1, 100, 68)
+            complaints = st.slider("Support complaints (last 12 months)", 0, 10, 1)
+            submitted = st.form_submit_button("Predict Lifetime Value", use_container_width=True)
+
+    payload = {"age": age, "income": income, "frequency": frequency,
+               "recency": recency, "spending": spending, "complaints": complaints}
+
+    # Future FastAPI Integration
+    # response = requests.post("/predict", json=input_data)
+    # prediction = response.json()
+
+    with result_col:
+        if not submitted and not st.session_state.get("clv_result"):
+            section_header("Valuation Output", "Awaiting input")
+            callout(
+                "Provide the account inputs and run the valuation to generate predicted lifetime "
+                "value, customer tier, churn risk and a retention recommendation.",
+                title="No valuation yet",
+            )
+            return
+
+        if submitted:
+            st.session_state["clv_result"] = predict_clv(payload)
+        result = st.session_state["clv_result"]
+
+        section_header("Valuation Output", "Generated locally from account inputs")
+        st.markdown(
+            f"""
+            <div class="ms-card ms-anim">
+              <div class="ms-kpi-label">Predicted lifetime value</div>
+              <div style="font-size:2.1rem;font-weight:780;color:#fff;margin:8px 0 4px 0">
+                {format_currency(result['clv'], 2)}
+              </div>
+              <div class="ms-kpi-desc">
+                Based on {result['yearly_orders']} orders per year over {result['expected_years']:.1f} expected years
+              </div>
+              <div style="margin-top:14px">
+                <span class="ms-badge ms-badge-{result['tier_tone']}">{result['tier']} tier</span>
+                <span class="ms-badge ms-badge-neutral" style="margin-left:6px">
+                  Avg order {format_currency(result['avg_order'], 2)}
+                </span>
+              </div>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+
+        st.plotly_chart(
+            charts.gauge_chart(100 - result["risk"], "Account health score", 100, "", height=290, thresholds=(40, 68)),
+            use_container_width=True, config=PLOT_CONFIG,
+        )
+
+    if not st.session_state.get("clv_result"):
+        return
+
+    result = st.session_state["clv_result"]
+    st.markdown('<div style="height:8px"></div>', unsafe_allow_html=True)
+
+    m1, m2, m3, m4 = st.columns(4)
+    with m1:
+        stat_card("Predicted CLV", format_currency(result["clv"]), "Discounted lifetime revenue")
+    with m2:
+        stat_card("Customer Tier", result["tier"], "Assigned value band", result["tier_tone"])
+    with m3:
+        stat_card("Churn Risk Score", f"{result['risk']:.0f} / 100", "Higher means greater exposure",
+                  "danger" if result["risk"] >= 65 else ("warning" if result["risk"] >= 40 else "success"))
+    with m4:
+        stat_card("Expected Tenure", f"{result['expected_years']:.1f} yrs", "Projected active lifespan", "primary")
+
+    st.markdown('<div style="height:16px"></div>', unsafe_allow_html=True)
+
+    d1, d2 = st.columns([1, 1.15])
+    with d1:
+        progress_card("Value Drivers", [
+            ("Order frequency", min(payload["frequency"] / 40 * 100, 100), f"{payload['frequency']} / yr"),
+            ("Spending intensity", payload["spending"], f"{payload['spending']} / 100"),
+            ("Engagement recency", max(0, 100 - payload["recency"] / 3.65), f"{payload['recency']} days"),
+            ("Service satisfaction", max(0, 100 - payload["complaints"] * 12), f"{payload['complaints']} complaints"),
+        ], tone="success")
+        callout(result["retention"], tone="danger" if result["risk"] >= 65 else "success",
+                title="Retention Recommendation")
+    with d2:
+        section_header("Projected Value Accumulation", "Cumulative CLV by year")
+        years = np.arange(1, int(np.ceil(result["expected_years"])) + 1)
+        yearly = result["clv"] / max(result["expected_years"], 1)
+        cumulative = np.minimum(np.cumsum(np.full(len(years), yearly)), result["clv"])
+        st.plotly_chart(
+            charts.area_chart([f"Year {y}" for y in years], {"Cumulative CLV": np.round(cumulative, 2)}, height=310),
+            use_container_width=True, config=PLOT_CONFIG,
+        )
