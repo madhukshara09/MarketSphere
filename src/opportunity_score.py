@@ -1,26 +1,26 @@
-def calculate_score(row):
+"""Opportunity scoring used by the decision-impact workflow."""
 
-    score = (
+from __future__ import annotations
 
-        row["Income"]*0.20 +
-
-        row["Total_Spending"]*0.35 +
-
-        row["Total_Purchases"]*0.25 +
-
-        (100-row["Recency"])*0.20
-
-    )
-
-    return score
-df["Opportunity_Score"] = df.apply(
-    calculate_score,
-    axis=1
-)
+import pandas as pd
 from sklearn.preprocessing import MinMaxScaler
 
-scaler = MinMaxScaler()
 
-df["Opportunity_Score"] = scaler.fit_transform(
-    df[["Opportunity_Score"]]
-)*100
+REQUIRED_COLUMNS = {"Income", "Total_Spending", "Total_Purchases", "Recency"}
+
+
+def add_opportunity_score(df: pd.DataFrame) -> pd.DataFrame:
+    """Return a copy with a transparent 0-100 marketing-opportunity score."""
+    missing = REQUIRED_COLUMNS.difference(df.columns)
+    if missing:
+        raise ValueError(f"Missing score columns: {', '.join(sorted(missing))}")
+
+    result = df.copy()
+    normalized = MinMaxScaler().fit_transform(
+        result[["Income", "Total_Spending", "Total_Purchases", "Recency"]]
+    )
+    result["Opportunity_Score"] = (
+        normalized[:, 0] * 0.20 + normalized[:, 1] * 0.35
+        + normalized[:, 2] * 0.25 + (1 - normalized[:, 3]) * 0.20
+    ) * 100
+    return result

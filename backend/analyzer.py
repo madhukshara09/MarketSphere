@@ -1,3 +1,4 @@
+import json
 import os
 import joblib
 import pandas as pd
@@ -42,6 +43,8 @@ SEGMENT_MAPPING = {
     3: "Premium VIP Customers",
 }
 
+SEGMENT_MAPPING_PATH = os.path.join(MODELS_DIR, "segment_mapping.json")
+
 
 def load_models():
     """Load all trained MarketSphere models."""
@@ -81,8 +84,12 @@ def run_segmentation(df):
     result = df.copy()
 
     result["Cluster"] = clusters
+    mapping = SEGMENT_MAPPING
+    if os.path.exists(SEGMENT_MAPPING_PATH):
+        with open(SEGMENT_MAPPING_PATH, encoding="utf-8") as handle:
+            mapping = {int(key): value for key, value in json.load(handle).items()}
     result["Customer_Segment"] = [
-        SEGMENT_MAPPING.get(int(cluster), "Unknown")
+        mapping.get(int(cluster), "Unknown")
         for cluster in clusters
     ]
 

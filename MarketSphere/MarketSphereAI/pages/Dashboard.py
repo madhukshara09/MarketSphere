@@ -19,8 +19,8 @@ PLOT_CONFIG = {"displayModeBar": False, "responsive": True}
 
 def _segment_tone(value: str) -> str:
     return {
-        "Champions": "primary", "Loyal": "success", "Potential": "neutral",
-        "At Risk": "warning", "Hibernating": "danger",
+        "Premium VIP Customers": "primary", "Loyal Customers": "success",
+        "Low-Value Customers": "warning", "Dormant Customers": "danger",
     }.get(str(value), "neutral")
 
 
@@ -95,14 +95,14 @@ def render() -> None:
 
     # ---------------- Row 4: Recent customers ----------------
     section_header("Recent Customers", f"{len(customers)} records in current snapshot")
-    table = customers.head(12).copy()
+    table = customers.sort_values("Opportunity_Score", ascending=False).head(12).copy()
     table["Predicted_CLV"] = table["Predicted_CLV"].apply(lambda v: format_currency(v))
     table["Response_Probability"] = (table["Response_Probability"] * 100).round(1).astype(str) + "%"
     table = table[[
-        "Customer_ID", "Customer_Name", "Customer_Segment",
+        "ID", "Customer_Segment",
         "Predicted_CLV", "Response_Probability", "Recommendation",
     ]].rename(columns={
-        "Customer_ID": "Customer ID", "Customer_Name": "Customer Name",
+        "ID": "Customer ID",
         "Customer_Segment": "Segment", "Predicted_CLV": "CLV",
         "Response_Probability": "Probability",
     })

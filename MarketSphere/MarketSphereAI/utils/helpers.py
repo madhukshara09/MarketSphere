@@ -1,8 +1,4 @@
-"""General purpose helpers: formatting, mock data access, deterministic business logic.
-
-No backend, no database, no ML. All numbers are derived from local mock data and
-transparent heuristic formulas so the UI behaves realistically.
-"""
+"""Presentation helpers backed by the root MarketSphere ML pipeline."""
 
 from __future__ import annotations
 
@@ -16,18 +12,15 @@ import streamlit as st
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(BASE_DIR, "data")
 ASSETS_DIR = os.path.join(BASE_DIR, "assets")
-CUSTOMERS_CSV = os.path.join(DATA_DIR, "customers.csv")
+APP_VERSION = "2.0.0"
+COMPANY_NAME = "MarketSphere"
 
-APP_VERSION = "1.4.2"
-COMPANY_NAME = "MarketSphere Analytics, Inc."
-
-SEGMENTS = ["Champions", "Loyal", "Potential", "At Risk", "Hibernating"]
+SEGMENTS = ["Premium VIP Customers", "Loyal Customers", "Low-Value Customers", "Dormant Customers"]
 SEGMENT_COLORS = {
-    "Champions": "#2563EB",
-    "Loyal": "#10B981",
-    "Potential": "#38BDF8",
-    "At Risk": "#F59E0B",
-    "Hibernating": "#EF4444",
+    "Premium VIP Customers": "#2563EB",
+    "Loyal Customers": "#10B981",
+    "Low-Value Customers": "#F59E0B",
+    "Dormant Customers": "#EF4444",
 }
 CHANNELS = ["Email", "Paid Search", "Social Media", "Display", "Affiliate", "Direct Mail"]
 
@@ -85,32 +78,22 @@ def load_css(file_path: str) -> None:
 
 
 # ----------------------------------------------------------------------------
-# Mock data access
+# Data and model access
 # ----------------------------------------------------------------------------
 @st.cache_data(show_spinner=False)
 def load_customers() -> pd.DataFrame:
-    """Load the mock customer dataset, generating it on first run."""
-    if not os.path.exists(CUSTOMERS_CSV):
-        from data.generate_mock_data import generate_customers, save_customers
-
-        save_customers(generate_customers())
-    return pd.read_csv(CUSTOMERS_CSV)
+    """Load and score the real project dataset with saved ML models."""
+    from backend.model_service import load_scored_customers
+    return load_scored_customers()
 
 
 @st.cache_data(show_spinner=False)
 def monthly_revenue(months: int = 12) -> pd.DataFrame:
-    """Deterministic monthly revenue / target series."""
-    rng = np.random.default_rng(21)
-    today = datetime.today().replace(day=1)
-    labels, revenue, target = [], [], []
-    base = 780_000.0
-    for offset in range(months - 1, -1, -1):
-        point = today - timedelta(days=30 * offset)
-        labels.append(point.strftime("%b %Y"))
-        base *= 1 + rng.normal(0.028, 0.032)
-        revenue.append(round(base, 2))
-        target.append(round(base * rng.uniform(0.9, 1.1), 2))
-    return pd.DataFrame({"Month": labels, "Revenue": revenue, "Target": target})
+    """Aggregate observed spending by customer-enrolment month."""
+    customers = load_customers().copy()
+    customers["Dt_Customer"] = pd.to_datetime(customers["Dt_Customer"])
+    grouped = customers.groupby(customers["Dt_Customer"].dt.to_period("M"))["Total_Spending"].sum().tail(months)
+    return pd.DataFrame({"Month": grouped.index.astype(str), "Revenue": grouped.values, "Target": grouped.values * 0.95})
 
 
 @st.cache_data(show_spinner=False)
@@ -126,16 +109,17 @@ def retention_trend(months: int = 12) -> pd.DataFrame:
 
 @st.cache_data(show_spinner=False)
 def campaign_performance() -> pd.DataFrame:
-    """Per-channel campaign performance summary."""
-    rng = np.random.default_rng(42)
-    frame = pd.DataFrame({
-        "Channel": CHANNELS,
-        "Reached": rng.integers(9_000, 48_000, len(CHANNELS)),
-        "Conversion Rate": np.round(rng.uniform(4.2, 19.5, len(CHANNELS)), 2),
-        "Spend": np.round(rng.uniform(18_000, 96_000, len(CHANNELS)), 2),
-    })
+    """Model-based campaign potential split across illustrative channels."""
+    customers = load_customers()
+    response_rate = customers["Response_Probability"].mean() * 100
+    total = len(customers)
+    weights = np.array([0.26, 0.19, 0.17, 0.14, 0.13, 0.11])
+    reached = (total * weights).round().astype(int)
+    frame = pd.DataFrame({"Channel": CHANNELS, "Reached": reached})
+    frame["Conversion Rate"] = np.round(response_rate * np.array([1.12, 1.04, 0.98, 0.88, 0.93, 0.82]), 2)
     frame["Converted"] = (frame["Reached"] * frame["Conversion Rate"] / 100).round().astype(int)
-    frame["Revenue"] = (frame["Converted"] * rng.uniform(120, 320, len(CHANNELS))).round(2)
+    frame["Spend"] = frame["Reached"] * 8
+    frame["Revenue"] = frame["Converted"] * customers["Total_Spending"].mean() / max(customers["Total_Purchases"].mean(), 1)
     frame["ROI"] = ((frame["Revenue"] - frame["Spend"]) / frame["Spend"] * 100).round(1)
     return frame
 
@@ -156,65 +140,24 @@ def recent_activity() -> list[dict]:
 # Heuristic "prediction" logic (placeholder for future model service)
 # ----------------------------------------------------------------------------
 def predict_response(payload: dict) -> dict:
-    """Estimate campaign response probability from form inputs.
-
-    Transparent weighted scoring - not a machine learning model.
-    """
-    # Future FastAPI Integration
-    # response = requests.post("/predict/response", json=payload)
-    # prediction = response.json()
-
-    education_weight = {"High School": 0.0, "Bachelor": 0.06, "Master": 0.10, "PhD": 0.13}
-    occupation_weight = {"Student": -0.04, "Employed": 0.05, "Self-Employed": 0.07, "Manager": 0.10, "Retired": -0.02}
-    marital_weight = {"Single": 0.01, "Married": 0.05, "Divorced": -0.02, "Widowed": -0.03}
-
-    score = 0.18
-    score += min(payload["income"] / 200_000, 1.0) * 0.22
-    score += min(payload["frequency"] / 30, 1.0) * 0.20
-    score += (1 - min(payload["recency"] / 365, 1.0)) * 0.18
-    score += payload["spending"] / 100 * 0.16
-    score += education_weight.get(payload["education"], 0.0)
-    score += occupation_weight.get(payload["occupation"], 0.0)
-    score += marital_weight.get(payload["marital_status"], 0.0)
-    score -= abs(payload["age"] - 42) / 100 * 0.08
-
-    probability = float(np.clip(score, 0.02, 0.97))
-    confidence = float(np.clip(0.62 + abs(probability - 0.5) * 0.72, 0.6, 0.98))
-    responds = probability >= 0.5
-
-    if probability >= 0.72:
-        recommendation = "Prioritise this customer in the next campaign wave with a premium offer and a personalised landing page."
-    elif probability >= 0.5:
-        recommendation = "Include in the main campaign with a mid-tier incentive and a two-step reminder sequence."
-    elif probability >= 0.3:
-        recommendation = "Nurture first. Run a low-cost re-engagement sequence before adding to a paid campaign."
-    else:
-        recommendation = "Suppress from paid targeting. Keep in lifecycle email only to protect campaign efficiency."
-
-    return {
-        "probability": probability,
-        "responds": responds,
-        "confidence": confidence,
-        "recommendation": recommendation,
-        "drivers": {
-            "Purchase frequency": min(payload["frequency"] / 30, 1.0),
-            "Income level": min(payload["income"] / 200_000, 1.0),
-            "Engagement recency": 1 - min(payload["recency"] / 365, 1.0),
-            "Spending score": payload["spending"] / 100,
-        },
-    }
+    """Run the trained campaign-response model and create UI explanation data."""
+    from backend.model_service import predict_response as model_predict_response
+    result = model_predict_response(payload)
+    probability = result["probability"]
+    result["confidence"] = max(0.5, abs(probability - 0.5) * 2)
+    result["drivers"] = {"Purchase frequency": min(payload["frequency"] / 40, 1), "Income level": min(payload["income"] / 150000, 1), "Engagement recency": max(0, 1 - payload["recency"] / 100), "Spending score": payload["spending"] / 100}
+    result["recommendation"] = "Include in the next campaign wave." if result["responds"] else "Use a low-cost nurture campaign before paid targeting."
+    return result
 
 
 def predict_clv(payload: dict) -> dict:
-    """Estimate customer lifetime value from form inputs."""
-    # Future FastAPI Integration
-    # response = requests.post("/predict/clv", json=payload)
-    # prediction = response.json()
-
-    avg_order = 45 + payload["income"] / 1_400 + payload["spending"] * 1.6
+    """Run the trained CLV-proxy model and derive business presentation fields."""
+    from backend.model_service import predict_clv as model_predict_clv
+    result = model_predict_clv(payload)
+    clv = result["clv"]
+    avg_order = payload["spending"] * 25 / max(payload["frequency"], 1)
     yearly_orders = max(payload["frequency"], 1)
     expected_years = float(np.clip(5.5 - payload["recency"] / 120 - payload["complaints"] * 0.45, 0.6, 7.5))
-    clv = float(avg_order * yearly_orders * expected_years * 0.72)
 
     if clv >= 12_000:
         tier, tier_tone = "Platinum", "primary"
@@ -237,8 +180,7 @@ def predict_clv(payload: dict) -> dict:
     else:
         retention = "Healthy account. Focus on cross-sell and advocacy programmes to expand wallet share."
 
-    return {
-        "clv": clv,
+    result.update({
         "tier": tier,
         "tier_tone": tier_tone,
         "risk": risk,
@@ -246,7 +188,8 @@ def predict_clv(payload: dict) -> dict:
         "avg_order": avg_order,
         "expected_years": expected_years,
         "yearly_orders": yearly_orders,
-    }
+    })
+    return result
 
 
 def simulate_decision(payload: dict) -> dict:

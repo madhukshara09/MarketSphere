@@ -81,9 +81,9 @@ def render() -> None:
         with c1:
             stat_card("Application Version", APP_VERSION, "Enterprise edition")
         with c2:
-            stat_card("Build Channel", "Stable", "Frontend demonstration build", "success")
+            stat_card("Build Channel", "Stable", "Integrated ML application", "success")
         with c3:
-            stat_card("Data Source", "Local mock dataset", "300 generated customers", "warning")
+            stat_card("Data Source", "Marketing Campaign dataset", "Local processed customer records", "warning")
 
         st.markdown(
             f"""
@@ -101,7 +101,7 @@ def render() -> None:
             unsafe_allow_html=True,
         )
         callout(
-            "This build contains the frontend only. Prediction, segmentation and reporting services "
-            "are represented by transparent local heuristics and are ready for backend integration.",
+            "This application uses the repository's trained segmentation, CLV-proxy and campaign-response "
+            "models. Re-run train_models.py after changing the processed dataset.",
             title="Implementation notice",
         )

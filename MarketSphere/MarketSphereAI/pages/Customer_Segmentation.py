@@ -6,7 +6,6 @@ import pandas as pd
 import streamlit as st
 
 from utils import charts
-from backend.analyzer import analyze_dataset
 from utils.components import (
     callout, data_table, list_card, page_header, section_header, stat_card,
 )
@@ -38,8 +37,8 @@ PLOT_CONFIG = {"displayModeBar": False, "responsive": True}
 
 def _segment_tone(value: str) -> str:
     return {
-        "Champions": "primary", "Loyal": "success", "Potential": "neutral",
-        "At Risk": "warning", "Hibernating": "danger",
+        "Premium VIP Customers": "primary", "Loyal Customers": "success",
+        "Low-Value Customers": "warning", "Dormant Customers": "danger",
     }.get(str(value), "neutral")
 
 
@@ -72,14 +71,8 @@ def render() -> None:
                 )
             return
     else:
-        customers = pd.read_csv(
-            PROJECT_ROOT
-            / "data"
-            / "processed"
-            / "marketing_campaign_cleaned.csv"
-            )
-        customers = analyze_dataset(customers)
-        source = "Built-in demonstration dataset"
+        customers = pd.read_csv(PROJECT_ROOT / "data" / "processed" / "marketing_campaign_cleaned.csv")
+        source = "Built-in marketing campaign dataset"
 
     if analyse:
         validation = validate_for_segmentation(customers)
@@ -114,6 +107,8 @@ def render() -> None:
         )
         return
 
+    source = st.session_state.get("segmentation_source", source)
+    customers = st.session_state.get("segmentation_result", customers)
     st.markdown(f'<div class="ms-note" style="margin:6px 0 14px 0">{source} &middot; '
                 f'{len(customers)} records processed</div>', unsafe_allow_html=True)
 

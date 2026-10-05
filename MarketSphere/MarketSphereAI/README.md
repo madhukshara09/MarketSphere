@@ -1,16 +1,16 @@
 # MarketSphere AI
 
-Enterprise-grade marketing analytics frontend built entirely with Python, Streamlit, Plotly,
-Pandas, NumPy and Faker. No backend, no database and no machine learning models — every number
-comes from locally generated mock data and transparent heuristic formulas.
+Polished Streamlit interface for the root MarketSphere ML pipeline. The interface displays
+predictions from the trained segmentation, CLV-proxy and campaign-response models stored in
+the repository root.
 
 ## Quick start
 
 ```bash
-cd MarketSphereAI
-python -m venv .venv && source .venv/bin/activate     # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-python data/generate_mock_data.py                      # optional, runs automatically on first launch
+cd ../..
+python -m venv .venv && .venv\Scripts\activate
+pip install -r requirements-runtime.txt
+python train_models.py
 streamlit run app.py
 ```
 
