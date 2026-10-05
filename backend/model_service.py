@@ -8,7 +8,7 @@ from pathlib import Path
 import pandas as pd
 
 from .analyzer import analyze_dataset
-from .data_validator import CAMPAIGN_FEATURES, CLV_FEATURES
+from .data_validator import CAMPAIGN_FEATURES, CLV_FEATURES, prepare_marketing_dataset
 from src.opportunity_score import add_opportunity_score
 
 
@@ -18,7 +18,13 @@ PROCESSED_DATA = ROOT / "data" / "processed" / "marketing_campaign_cleaned.csv"
 
 def load_scored_customers() -> pd.DataFrame:
     """Load the project dataset and score it with the saved ML models."""
-    scored = add_opportunity_score(analyze_dataset(pd.read_csv(PROCESSED_DATA)))
+    return score_dataset(pd.read_csv(PROCESSED_DATA))
+
+
+def score_dataset(df: pd.DataFrame) -> pd.DataFrame:
+    """Prepare and score a user-provided compatible marketing dataset."""
+    scored = add_opportunity_score(analyze_dataset(prepare_marketing_dataset(df)))
+    scored["Predicted_CLV"] = scored["Predicted_CLV"].clip(lower=0)
     scored["Expected_Revenue"] = scored["Response_Probability"] * (
         scored["Total_Spending"] / scored["Total_Purchases"].clip(lower=1)
     )

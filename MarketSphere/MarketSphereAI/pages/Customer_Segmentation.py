@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import pandas as pd
 import streamlit as st
 
 from utils import charts
@@ -16,17 +15,6 @@ from utils.helpers import (
     format_percent,
     load_customers,
 )
-
-import sys
-from pathlib import Path
-
-PROJECT_ROOT = Path(__file__).resolve().parents[3]
-
-if str(PROJECT_ROOT) not in sys.path:
-    sys.path.insert(0, str(PROJECT_ROOT))
-
-from backend.analyzer import analyze_dataset
-from backend.data_validator import validate_for_segmentation
 
 PLOT_CONFIG = {"displayModeBar": False, "responsive": True}
 
@@ -50,65 +38,8 @@ def render() -> None:
         chip="4 active clusters",
     )
 
-    upload_col, action_col = st.columns([2.6, 1])
-    with upload_col:
-        uploaded = st.file_uploader(
-            "Upload customer CSV", type=["csv"],
-            help="Optional. Leave empty to analyse the built-in demonstration dataset.",
-        )
-    with action_col:
-        st.markdown('<div style="height:30px"></div>', unsafe_allow_html=True)
-        analyse = st.button("Analyze Customers", use_container_width=True)
-
-    if uploaded is not None:
-        try:
-            customers = pd.read_csv(uploaded)
-            source = f"Uploaded file: {uploaded.name}"
-        except Exception as e:
-            callout(
-                f"Unable to read the uploaded CSV: {e}",
-                tone="danger",title="Invalid CSV",
-                )
-            return
-    else:
-        customers = pd.read_csv(PROJECT_ROOT / "data" / "processed" / "marketing_campaign_cleaned.csv")
-        source = "Built-in marketing campaign dataset"
-
-    if analyse:
-        validation = validate_for_segmentation(customers)
-        if not validation["valid"]:
-            missing = ", ".join(validation["missing_columns"])
-            callout(
-                f"The uploaded dataset is missing required columns: {missing}",
-                tone="danger",
-                title="Unsupported dataset",
-                )
-            return
-        try:
-            with st.spinner("Running MarketSphere ML models..."):
-                customers = analyze_dataset(customers)
-            st.session_state["segmentation_result"] = customers
-            st.session_state["segmentation_source"] = source
-            st.session_state["segmentation_ran"] = True
-
-        except Exception as e:
-            callout(
-                f"Analysis failed: {e}",
-                tone="danger",
-                title="ML analysis error",
-                )
-            return
-
-    if not st.session_state.get("segmentation_ran"):
-        callout(
-            "Select a CSV or continue with the demonstration dataset, then run the analysis to "
-            "generate clusters, statistics and segment level insights.",
-            title="Ready to analyse",
-        )
-        return
-
-    source = st.session_state.get("segmentation_source", source)
-    customers = st.session_state.get("segmentation_result", customers)
+    customers = load_customers()
+    source = st.session_state.get("active_dataset_name", "Built-in marketing campaign dataset")
     st.markdown(f'<div class="ms-note" style="margin:6px 0 14px 0">{source} &middot; '
                 f'{len(customers)} records processed</div>', unsafe_allow_html=True)
 

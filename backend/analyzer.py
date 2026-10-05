@@ -1,5 +1,6 @@
 import json
 import os
+from functools import lru_cache
 import joblib
 import pandas as pd
 
@@ -46,6 +47,7 @@ SEGMENT_MAPPING = {
 SEGMENT_MAPPING_PATH = os.path.join(MODELS_DIR, "segment_mapping.json")
 
 
+@lru_cache(maxsize=1)
 def load_models():
     """Load all trained MarketSphere models."""
 

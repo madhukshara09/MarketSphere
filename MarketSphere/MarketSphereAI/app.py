@@ -39,6 +39,8 @@ from pages import (  # noqa: E402
 )
 from utils.components import icon, sidebar_brand, sidebar_footer  # noqa: E402
 from utils.helpers import ASSETS_DIR, load_css  # noqa: E402
+from backend.data_validator import load_csv  # noqa: E402
+from backend.model_service import score_dataset  # noqa: E402
 
 st.set_page_config(
     page_title="MarketSphere AI | Marketing Intelligence Platform",
@@ -68,6 +70,33 @@ def init_state() -> None:
     st.session_state.setdefault("authenticated", False)
     st.session_state.setdefault("username", "")
     st.session_state.setdefault("active_page", "Dashboard")
+    st.session_state.setdefault("active_dataset", None)
+    st.session_state.setdefault("active_dataset_name", "Built-in marketing campaign dataset")
+
+
+def dataset_controls() -> None:
+    """Allow a compatible CSV to be used across the whole workspace."""
+    st.sidebar.markdown('<div class="ms-nav-label">Data source</div>', unsafe_allow_html=True)
+    uploaded = st.sidebar.file_uploader(
+        "Upload marketing CSV", type=["csv"], key="marketing_dataset_upload",
+        help="Supports the processed project schema or the original marketing-campaign columns.",
+    )
+    if uploaded is not None:
+        st.sidebar.caption(f"Selected: {uploaded.name}")
+        if st.sidebar.button("Run models on uploaded data", key="score_uploaded_data", width="stretch"):
+            try:
+                with st.spinner("Preparing data and running trained models..."):
+                    st.session_state["active_dataset"] = score_dataset(load_csv(uploaded))
+                st.session_state["active_dataset_name"] = uploaded.name
+                st.sidebar.success(f"Scored {len(st.session_state['active_dataset']):,} records")
+            except Exception as error:
+                st.sidebar.error(f"Upload could not be scored: {error}")
+
+    if st.sidebar.button("Use built-in dataset", key="use_default_dataset", width="stretch"):
+        st.session_state["active_dataset"] = None
+        st.session_state["active_dataset_name"] = "Built-in marketing campaign dataset"
+        st.rerun()
+    st.sidebar.caption(f"Active: {st.session_state['active_dataset_name']}")
 
 
 def login_page() -> None:
@@ -147,6 +176,8 @@ def sidebar_navigation() -> None:
                              type="primary" if is_active else "secondary"):
             st.session_state["active_page"] = label
             st.rerun()
+
+    dataset_controls()
 
     if sidebar_footer(st.session_state.get("username") or "Guest User"):
         st.session_state["authenticated"] = False

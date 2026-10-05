@@ -80,9 +80,11 @@ def load_css(file_path: str) -> None:
 # ----------------------------------------------------------------------------
 # Data and model access
 # ----------------------------------------------------------------------------
-@st.cache_data(show_spinner=False)
 def load_customers() -> pd.DataFrame:
     """Load and score the real project dataset with saved ML models."""
+    active_dataset = st.session_state.get("active_dataset")
+    if active_dataset is not None:
+        return active_dataset.copy()
     from backend.model_service import load_scored_customers
     return load_scored_customers()
 
