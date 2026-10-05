@@ -205,8 +205,11 @@ def simulate_decision(payload: dict) -> dict:
         "Display": 0.88, "Affiliate": 0.96, "Direct Mail": 0.79,
     }
     segment_factor = {
-        "Champions": 1.38, "Loyal": 1.18, "Potential": 1.0,
-        "At Risk": 0.78, "Hibernating": 0.58, "All Segments": 1.0,
+        "Premium VIP Customers": 1.38,
+        "Loyal Customers": 1.18,
+        "Low-Value Customers": 0.78,
+        "Dormant Customers": 0.58,
+        "All Segments": 1.0,
     }
 
     base_rate = 0.072

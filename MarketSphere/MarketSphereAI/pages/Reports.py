@@ -69,7 +69,7 @@ def _report_frame(key: str) -> pd.DataFrame:
     customers = load_customers()
     if key == "customer":
         frame = customers.groupby("Customer_Segment").agg(
-            Customers=("Customer_ID", "count"),
+            Customers=("ID", "count"),
             AvgCLV=("Predicted_CLV", "mean"),
             AvgIncome=("Income", "mean"),
             AvgRecency=("Recency", "mean"),
